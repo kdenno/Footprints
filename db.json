@@ -27,6 +27,13 @@
       "attention": false,
       "date": "02-03-2020",
       "tech": "Sarah Wilson"
+    },
+    {
+      "message": "Changed network card on server 007",
+      "tech": "Sam Smith",
+      "attention": false,
+      "date": "2020-04-27T20:27:50.547Z",
+      "id": 5
     }
   ],
   "techs": [
