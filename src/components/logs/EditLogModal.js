@@ -12,11 +12,12 @@ function EditLogModal({ current, updateLog, clearCurrent }) {
     if (message === " " || tech === "") {
       M.toast({ html: " Please Enter a message and Tech" });
     } else {
-      updateLog({ id: current.id, message, tech, attention });
+      updateLog({ id: current.id, message, tech, attention , date: new Date()});
       setMessage("");
       setAttention(false);
       setTech("");
       clearCurrent();
+      M.toast({html: `Log updated by ${tech}`});
     }
   };
 

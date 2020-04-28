@@ -7,6 +7,7 @@ import {
   UPDATE_LOG,
   CLEAR_CURRENT,
   SET_CURRENT,
+  SEARCH_LOGS
 } from "./ActionTypes";
 
 export const getLogs = () => {
@@ -22,6 +23,20 @@ export const getLogs = () => {
     }
   };
 };
+
+export const searchLogs = (text) => {
+    // reduxt thunk gives us the ability to retun a function
+    return async (dispatch) => {
+      setLoading();
+      try {
+        const logs = await fetch(`/logs?q=${text}`);
+        const logData = await logs.json();
+        dispatch({ type: SEARCH_LOGS, payload: logData });
+      } catch (error) {
+        dispatch({ type: LOGS_ERROR, payload: error.response.data });
+      }
+    };
+  };
 export const addLog = (log) => {
   return async (dispatch) => {
     setLoading();
