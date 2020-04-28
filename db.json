@@ -1,11 +1,10 @@
 {
   "Logs": [
     {
+      "id": 2,
       "message": "Changed NIC card for server 003",
-      "tech": "Gilbert Smith",
-      "attention": "",
-      "date": "2020-04-27T20:32:11.537Z",
-      "id": 2
+      "tech": "John Doe",
+      "attention": true
     },
     {
       "message": "1122 wireless down",

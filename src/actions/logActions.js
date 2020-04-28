@@ -4,6 +4,9 @@ import {
   ADD_LOG,
   LOGS_ERROR,
   DELETE_LOG,
+  UPDATE_LOG,
+  CLEAR_CURRENT,
+  SET_CURRENT,
 } from "./ActionTypes";
 
 export const getLogs = () => {
@@ -49,6 +52,35 @@ export const deleteLog = (id) => {
     } catch (error) {
       dispatch({ type: LOGS_ERROR, payload: error.response.data });
     }
+  };
+};
+
+export const updateLog = (log) => {
+  return async (dispatch) => {
+    setLoading();
+    try {
+      const updatedlog = await fetch(`/logs/${log.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(log),
+      });
+      const logData = await updatedlog.json();
+      dispatch({ type: UPDATE_LOG, payload: logData });
+    } catch (error) {
+      dispatch({ type: LOGS_ERROR, payload: error.response.data });
+    }
+  };
+};
+export const setCurrent = (log) => {
+  return (dispatch) => {
+    dispatch({ type: SET_CURRENT, payload: log });
+  };
+};
+export const clearCurrent = () => {
+  return (dispatch) => {
+    dispatch({ type: CLEAR_CURRENT });
   };
 };
 export const setLoading = () => {
