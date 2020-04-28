@@ -1,39 +1,18 @@
 {
   "Logs": [
     {
-      "id": 1,
-      "message": "changed hard drive on workstation 005",
-      "attention": false,
-      "date": "02-03-2020",
-      "tech": "Sam Smith"
+      "message": "Changed NIC card for server 003",
+      "tech": "Gilbert Smith",
+      "attention": "",
+      "date": "2020-04-27T20:32:11.537Z",
+      "id": 2
     },
     {
-      "id": 2,
-      "message": "Workstation 007 not posting",
+      "message": "1122 wireless down",
+      "tech": "Sarah Wilson",
       "attention": true,
-      "date": "02-03-2019",
-      "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "changed memory on workstation 050",
-      "attention": false,
-      "date": "01-03-2020",
-      "tech": "Gilbert Smith"
-    },
-    {
-      "id": 4,
-      "message": "changed hard drive on workstation 007",
-      "attention": false,
-      "date": "02-03-2020",
-      "tech": "Sarah Wilson"
-    },
-    {
-      "message": "Changed network card on server 007",
-      "tech": "Sam Smith",
-      "attention": false,
-      "date": "2020-04-27T20:27:50.547Z",
-      "id": 5
+      "date": "2020-04-27T20:33:46.964Z",
+      "id": 3
     }
   ],
   "techs": [

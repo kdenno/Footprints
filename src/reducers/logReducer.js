@@ -3,6 +3,7 @@ import {
   SET_LOADING,
   ADD_LOG,
   LOGS_ERROR,
+  DELETE_LOG,
 } from "../actions/ActionTypes";
 const initialState = {
   logs: [],
@@ -22,6 +23,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         logs: [action.payload, ...state.logs],
+        loading: false,
+      };
+    case DELETE_LOG:
+      return {
+        ...state,
+        logs: state.logs.filter((log) => log.id !== action.payload),
         loading: false,
       };
     case SET_LOADING:
