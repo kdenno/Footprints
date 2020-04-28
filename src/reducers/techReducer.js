@@ -23,6 +23,18 @@ export default (state = initialState, action) => {
         ...state,
         loading: true,
       };
+    case ADD_TECH:
+      return {
+        ...state,
+        techs: [action.payload, ...state.techs],
+        loading: false,
+      };
+    case DELETE_TECH:
+      return {
+        ...state,
+        techs: state.techs.filter((tech) => tech.id !== action.payload),
+        loading: false,
+      };
     case TECHS_ERROR:
       console.error(action.payload);
       return {
